@@ -8,7 +8,6 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import com.danikula.videocache.HttpProxyCacheServer;
 import com.danikula.videocache.file.FileNameGenerator;
@@ -24,7 +23,7 @@ import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.u91porn.MyApplication;
 import com.u91porn.R;
 import com.u91porn.data.model.UnLimit91PornItem;
-import com.u91porn.data.model.UnLimit91PornItem_;
+import com.u91porn.data.model.UnLimit91PornItem;
 import com.u91porn.ui.MvpActivity;
 import com.u91porn.utils.BoxQureyHelper;
 import com.u91porn.utils.Constants;
@@ -52,7 +51,7 @@ public class PlayVideoActivity extends MvpActivity<PlayVideoView, PlayVideoPrese
     private final String TAG = PlayVideoActivity.class.getSimpleName();
 
     @BindView(R.id.videoplayer)
-    JZVideoPlayerStandard jzVideoPlayerStandard;
+    CustomVideoPlayer jzVideoPlayerStandard;
     @BindView(R.id.fl_comment)
     FrameLayout flComment;
 
@@ -107,8 +106,11 @@ public class PlayVideoActivity extends MvpActivity<PlayVideoView, PlayVideoPrese
     private void playVideo(String title, String videoUrl, String name, String thumImgUrl) {
         String proxyUrl = proxy.getProxyUrl(videoUrl);
         jzVideoPlayerStandard.setUp(proxyUrl, JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL, title);
+
         if (!TextUtils.isEmpty(thumImgUrl)) {
+
             jzVideoPlayerStandard.thumbImageView.setImageURI(Uri.parse(thumImgUrl));
+
         }
     }
 

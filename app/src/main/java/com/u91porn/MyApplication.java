@@ -3,6 +3,7 @@ package com.u91porn;
 import android.app.Application;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.danikula.videocache.HttpProxyCacheServer;
 import com.facebook.drawee.backends.pipeline.Fresco;
@@ -131,7 +132,7 @@ public class MyApplication extends Application {
      * @param host 当前可访问地址
      */
     public void setHost(@Nullable String host) {
-        this.host = host;
+//        this.host = host;
         SPUtils.put(this, Keys.KEY_SP_NOW_ADDRESS, host);
     }
 
@@ -233,6 +234,7 @@ public class MyApplication extends Application {
                 .build();
 
         mNoLimit91PornServiceApi = retrofit.create(NoLimit91PornServiceApi.class);
+
     }
 
     /**

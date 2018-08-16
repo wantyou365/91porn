@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="http://91.91p18.space/(不需翻墙，但会被封杀)" />
+            android:text="93.91p08.space/(不需翻墙，但会被封杀)" />
 
         <RadioButton
             android:id="@+id/rb_now_custom_adress"

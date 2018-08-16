@@ -7,3 +7,10 @@
 /build
 /captures
 .externalNativeBuild
+.idea/
+app/release/
+app/objectbox-models/
+*.gradle
+*.properties
+app/91key
+
